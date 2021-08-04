@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function User(props) {
   return (
@@ -18,7 +19,7 @@ export default function User(props) {
         </Card.Text>
 
         <Card.Footer className='text-center' >
-          <Button variant="primary">View User Detail</Button>
+          <Link to={`/user/${props.id}`} variant="primary">View User Detail</Link>
         </Card.Footer>
       </Card.Body>
     </Card>
