@@ -16,7 +16,7 @@ console.log(userData)
   return (
     <Layout title={"Blog | User Data"}>
       <Row xs={1} md={4} className="g-4 mt-4 mb-4">
-        {userData!=undefined? (
+        {/* {userData!=undefined? ( */}
          <Card>
          <Card.Body>{userData.username}</Card.Body>
          <Card.Body>{userData.name}</Card.Body>
@@ -24,11 +24,13 @@ console.log(userData)
          <Card.Body>{userData.phone}</Card.Body>
          <Card.Body>{userData.website}</Card.Body>
        </Card>
-        ) : (
-           <Card>
-           <Card.Body>No Data Regarding provided id</Card.Body>
-         </Card>
-        )}
+        ) 
+         {/* : (
+          <Card>
+            <Card.Body>No Data Regarding provided id</Card.Body>
+          </Card>
+         )
+        } */}
       </Row>
     </Layout>
   );

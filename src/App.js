@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import UserData from "./components/UserData";
 import Error404 from "./components/Error404";
+import UserForm from "./components/UserForm";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/createuser">
+            <UserForm />
           </Route>
           <Route exact path="/user/:id">
             <UserData />
