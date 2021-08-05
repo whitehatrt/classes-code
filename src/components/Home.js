@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import Layout from "./Layout";
 import User from "./User";
 import { Row,Col } from "react-bootstrap";
+import axios from 'axios'
 
 export default function Home() {
   const [userData, setUserData] = useState([{}]);
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((json) => setUserData(json));
+  useEffect(async () => {
+    // fetch("https://jsonplaceholder.typicode.com/users")
+    //   .then((response) => response.json())
+    //   .then((json) => setUserData(json));
+    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+    const {data} =res;
+    setUserData(data);
   }, []);
   return (
     <Layout title={"Blog | Home"}>
