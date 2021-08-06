@@ -3,9 +3,12 @@ import Layout from "./Layout";
 import User from "./User";
 import { Row,Col } from "react-bootstrap";
 import axios from 'axios'
+import { useFriendStatus } from "./hooks/customHookes";
 
 export default function Home() {
   const [userData, setUserData] = useState([{}]);
+  const isOnline = useFriendStatus();
+
   useEffect(async () => {
     // fetch("https://jsonplaceholder.typicode.com/users")
     //   .then((response) => response.json())
@@ -29,7 +32,7 @@ export default function Home() {
         {userData?.map((item, i) => {
           return (
             <Col>
-              <User username={item.username} id={item.id} name={item.name} phone={item.phone} email={item.email} website={item.website}></User>
+              <User isOnline={isOnline} username={item.username} id={item.id} name={item.name} phone={item.phone} email={item.email} website={item.website}></User>
             </Col>
           );
         })}

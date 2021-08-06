@@ -14,6 +14,7 @@ export default function User(props) {
           <ListGroupItem> Email:- {props.email}</ListGroupItem>
           <ListGroupItem> Phone:- {props.phone}</ListGroupItem>
           <ListGroupItem> Website:- {props.website}</ListGroupItem>
+          <ListGroupItem> Status:- {props.isOnline}</ListGroupItem>
             
           </ListGroup>
         </Card.Text>
